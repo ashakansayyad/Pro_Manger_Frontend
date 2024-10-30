@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.container,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 99;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 25px 30px;
+  width: 410px;
+  height: 210px;
+  z-index: 100;
+  border-radius: 22px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.modalContent p {
+  font-size: 20px;
+  color: #000000;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+.email_input {
+  width: 100%;
+}
+.email_input input {
+  width: 100%;
+  border: 1px solid #767575;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 1rem;
+  font-size: 18px;
+  outline: none;
+  font-family: "Poppins", serif;
+}
+.modalContent_footer_two_btn {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.modalContent_footer_two_btn button {
+  height: 45px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+#cancle {
+  background: #17a2b8;
+  box-shadow: 0px 4px 12px rgba(23, 162, 184, 0.4);
+  color: white;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  border: none;
+  transition: background 0.2s;
+}
+#cancle:hover {
+  background: #138f9e;
+}
+
+#delete {
+  background: transparent;
+  box-shadow: 0px 2px 12px rgba(207, 54, 54, 0.2);
+  border: 2px solid #cf3636;
+  color: #cf3636;
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+#delete:hover {
+  background: #cf3636;
+  color: white;
+}
+.after_success {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#goitBtn {
+  width: 80%;
+  background: #17a2b8;
+  box-shadow: 0px 4px 12px rgba(23, 162, 184, 0.4);
+  color: white;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  height: 45px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  transition: background 0.2s;
+}
+#goitBtn:hover {
+  background: #138f9e;
+}

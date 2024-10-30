@@ -1,0 +1,13 @@
+.todoitems{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    gap: 15px;
+}
+
+.loading{
+  font-size: 12px;
+  font-weight: 600;
+}

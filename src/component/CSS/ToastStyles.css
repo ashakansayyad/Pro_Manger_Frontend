@@ -1,0 +1,16 @@
+.custom-toast {
+    background-color: #f0fdf4;
+    border: 1px solid #34d399; 
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: fit-content;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-toast-body {
+    color: #374151;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+  }
+  

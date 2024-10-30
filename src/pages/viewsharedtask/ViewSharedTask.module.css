@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.viewsharedtask {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px 50px;
+}
+.viewsharedtask_header {
+  display: flex;
+  gap: 10px;
+}
+.viewsharedtask_header p {
+  font-weight: 600;
+  font-family: "Poppins", serif;
+}
+.viewsharedtask_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid black; */
+  padding: 50px 80px;
+}
+.viewsharedtask_task_conainer {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #edf5fe;
+  border-radius: 12px;
+  max-height: 500px;
+  gap: 20px;
+  width: 50%;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+.viewsharedtask_task_conainer::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.viewsharedtask_task_conainer::-webkit-scrollbar-thumb {
+  background: #8daab9cc;
+  border-radius: 10px;
+}
+
+.viewsharedtask_task_conainer::-webkit-scrollbar-track {
+  background: #d6eaf4;
+}
+.priority_Conatiner {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  font-family: "Poppins", serif;
+  color: #707070;
+  font-weight: 600;
+}
+.viewsharedtask_task_conainer h2 {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+}
+.checklist_conatiner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checklist_conatiner p {
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.checklist_list_conatiner {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.checklist_list_items {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  gap: 15px;
+  width: 100%;
+  border: 1px solid #a49f9f;
+}
+.checklist_list_items p {
+  font-family: "Inter", sans-serif;
+}
+.viewsharedtask_duedate_container {
+  display: flex;
+  gap: 15px;
+  font-family: "Poppins", serif;
+  align-items: center;
+  font-weight: 600;
+}
+.dueDate {
+  background: #cf3636;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Poppins", serif;
+  padding: 5px 5px;
+}
+
+/* tablet screen */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .viewsharedtask {
+    padding: 20px 30px;
+  }
+
+  .viewsharedtask_header {
+    gap: 8px;
+    font-size: 18px;
+  }
+
+  .viewsharedtask_header p {
+    font-size: 20px;
+  }
+
+  .viewsharedtask_main {
+    padding: 40px 60px;
+  }
+
+  .viewsharedtask_task_conainer {
+    width: 60%;
+    padding: 25px 35px;
+    gap: 18px;
+  }
+
+  .priority_Conatiner {
+    gap: 7px;
+    font-size: 14px;
+  }
+
+  .viewsharedtask_task_conainer h2 {
+    font-size: 22px;
+  }
+
+  .checklist_conatiner p {
+    font-size: 16px;
+  }
+
+  .checklist_list_conatiner {
+    padding: 8px 0;
+    gap: 12px;
+  }
+
+  .checklist_list_items {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+
+  .checklist_list_items p {
+    font-size: 16px;
+  }
+
+  .viewsharedtask_duedate_container {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .dueDate {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* mobile screen */
+@media (max-width: 376px) {
+  .viewsharedtask {
+    padding: 15px 10px;
+  }
+
+  .viewsharedtask_header {
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .viewsharedtask_header p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .viewsharedtask_main {
+    padding: 20px 10px;
+  }
+
+  .viewsharedtask_task_conainer {
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .priority_Conatiner {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .viewsharedtask_task_conainer h2 {
+    font-size: 18px;
+  }
+
+  .checklist_conatiner p {
+    font-size: 14px;
+  }
+
+  .checklist_list_conatiner {
+    padding: 5px 0px;
+    gap: 10px;
+  }
+
+  .checklist_list_items {
+    padding: 5px;
+    gap: 10px;
+  }
+
+  .checklist_list_items p {
+    font-size: 14px;
+  }
+
+  .viewsharedtask_duedate_container {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .dueDate {
+    font-size: 10px;
+    padding: 5px;
+  }
+}

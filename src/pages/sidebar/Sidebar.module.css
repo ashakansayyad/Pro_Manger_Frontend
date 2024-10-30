@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.sidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-right: 1px solid #edf5fe;
+  flex-direction: column;
+  /* border:1px solid black; */
+}
+.sidebar_header {
+  height: 8%;
+  /* border:1px solid black; */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.sidebar_header h3 {
+  font-weight: 600;
+  font-family: "Poppins", serif;
+}
+
+.sidebar_main {
+  height: 92%;
+  display: flex;
+  padding: 30px 0px;
+  padding-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar_main_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+  gap: 20px;
+  /* border:1px solid black; */
+}
+.sidebar_main_group_item,
+.sidebar_main_group_analytics,
+.sidebar_main_group_setting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.sidebar_main_group_item:hover,
+.sidebar_main_group_analytics:hover,
+.sidebar_main_group_setting:hover {
+  background-color: rgba(67, 145, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.active {
+  background-color: #4391ed1a;
+}
+.sidebar_main_group_item p,
+.sidebar_main_group_analytics p,
+.sidebar_main_group_setting p {
+  font-size: 16px;
+  font-family: "Poppins", serif;
+  color: #000000;
+  font-weight: 500;
+}
+.sidebar_main_group_item:hover p,
+.sidebar_main_group_analytics:hover p,
+.sidebar_main_group_setting:hover p {
+  color: #4391ed;
+}
+
+.sidebar_main_group_item {
+  padding-right: 15px;
+}
+.sidebar_main_group_logout {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0px 50px;
+  gap: 20px;
+  cursor: pointer;
+  /* border:1px solid black; */
+}
+.sidebar_main_group_logout button {
+  width: 80%;
+  background: transparent;
+  border: none;
+  font-family: "Poppins", serif;
+  color: #cf3636;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar_main_group_logout button:hover {
+  color: #ffffff;
+  background-color: #cf3636;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar_main_group_logout button:active {
+  transform: scale(0.95);
+}
