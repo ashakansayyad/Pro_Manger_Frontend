@@ -30,29 +30,23 @@ function CreateTaskModal() {
 
   const isEdit = !!selectedTaskId;
 
-  // Fetch all users email to assign tasks
-  const fetchUsers = async () => {
-    try {
-      const res = await getAllUsers();
-      if (res && res.data) {
-        setTaskData((pre) => ({ ...pre, users: res.data }));
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   // Fetch task data for editing and pre-fill form
   useEffect(() => {
     if (selectedTaskId) {
       const fetchTask = async () => {
         try {
-          const res = await getTaskById(selectedTaskId); // Fetch task by ID
-          if (res.status === 200) {
-            fillTaskData(res.data); // Pre-fill task data
+          const taskRes = await getTaskById(selectedTaskId); // Fetch task by ID
+          if (taskRes.status === 200) {
+            fillTaskData(taskRes.data); // Pre-fill task data
+          }
+          // Fetch all users email to assign tasks
+
+          const userRes = await getAllUsers();
+          if (userRes && userRes.data) {
+            setTaskData((pre) => ({ ...pre, users: userRes.data }));
           }
         } catch (error) {
-          console.error("Failed to fetch task:", error);
+          console.error("Failed to fetch task data:", error);
         }
       };
       fetchTask();
@@ -224,9 +218,6 @@ function CreateTaskModal() {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    fetchUsers(); // Fetch users for dropdown
-  }, [selectedTaskId]);
 
   const handleCancle = () => {
     setSelectedTaskId("");
