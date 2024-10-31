@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "../../component/Form";
-import styles from "./login.module.css";
+import styles from "./Login.module.css";
 import { login } from "../../apis/user";
 import big_log from "../../assets/register.png";
 import back_img from "../../assets/back_color.png";
