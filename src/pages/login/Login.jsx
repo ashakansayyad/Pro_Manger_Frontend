@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Form from "../../component/Form";
 import styles from "./Login.module.css";
 import { login } from "../../apis/user";
@@ -13,6 +13,13 @@ import { toast } from "react-toastify";
 
 function Login() {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  useEffect(()=>{
+    if(token){
+       navigate('/');
+    }
+  },[]);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -91,6 +98,7 @@ function Login() {
     }
   };
 
+  
   return (
     <div className={styles.login}>
       <div className={styles.login_left}>

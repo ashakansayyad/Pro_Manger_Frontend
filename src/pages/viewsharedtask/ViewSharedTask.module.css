@@ -172,7 +172,7 @@
 }
 
 /* mobile screen */
-@media (max-width: 376px) {
+@media (max-width: 380px) {
   .viewsharedtask {
     padding: 15px 10px;
   }

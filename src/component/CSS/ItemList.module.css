@@ -142,7 +142,7 @@ input[type="checkbox"] {
   opacity: 1;
   gap: 15px;
   padding: 10px 0px;
-  max-height: 500px;
+  max-height: 1000px;
   display: flex;
   flex-direction: column;
 }

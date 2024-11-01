@@ -11,6 +11,7 @@ import pwdViewIcon from "../../assets/view_pwd.png";
 import pwdHideIcon from "../../assets/hide_pwd.png";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 function Register() {
   const navigate = useNavigate();
 

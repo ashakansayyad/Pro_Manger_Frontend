@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import add_people_icon from "../../assets/add_people_logo.svg";
 import styles from "./Homebar.module.css";
 import collaps_icon from "../../assets/collapse_icon.svg";
 import add_task_icon from "../../assets/add_task_icon.svg";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { ModalContext } from "../../context/Modal";
@@ -37,10 +36,11 @@ function Homebar() {
   const toggleFilterOptions = () => {
     setToggleFilteer(!toggleFilter);
   };
-
+useEffect(()=>{
   if (!isLoggedIn) {
     navigate("/login");
   }
+},[]);
 
   const toggleModal = () => {
     setAddTaskModal(!addTaskModal);
