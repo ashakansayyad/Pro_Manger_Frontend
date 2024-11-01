@@ -14,6 +14,7 @@
 .overlay {
   background: rgba(49, 49, 49, 0.8);
 }
+
 .modalContent {
   position: absolute;
   top: 50%;
@@ -26,11 +27,11 @@
   border-radius: 22px;
   overflow-y: auto;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .modalContent:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
@@ -96,6 +97,11 @@ input[type="checkbox"] {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.modalContent_addtasktitle_conatiner input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
 .modalContent_select_priority_conatiner {
   display: flex;
   justify-content: space-between;
@@ -122,23 +128,42 @@ input[type="checkbox"] {
   width: auto;
   height: 30px;
 }
-.priority {
+
+.priority,
+.selectedPriority {
+  display: flex;
+  align-items: center;
   padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin: 5px;
   cursor: pointer;
-  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.priority:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .selectedPriority {
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin: 5px;
-  cursor: pointer;
-  background-color: #f0f0f0;
+  border: 2px solid #007bff;
+  transform: scale(1.1);
+  background: #eeecec;
 }
+
+.priority.high {
+  color: #767575;
+}
+
+.priority.moderate {
+  color: #767575;
+}
+
+.priority.low {
+  color: #767575;
+}
+
 .modalContent_assignto_conatiner {
   display: flex;
   width: 100%;
@@ -156,7 +181,6 @@ input[type="checkbox"] {
   flex-direction: column;
   overflow-y: auto;
   width: 80%;
-  position: static;
 }
 .modalContent_custom_dropdown {
   width: 100%;
@@ -174,27 +198,37 @@ input[type="checkbox"] {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.modalContent_checklist_singlelist,
 .modalContent_custom_dropdown:hover {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .dropdownList {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
   max-height: 200px;
   overflow-y: auto;
-  list-style-type: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  background-color: white;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
-  z-index: 10;
-  width: 100%;
-  display: none;
+  position: absolute;
+  width: 75%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  margin-top: 40px;
+  z-index: 999;
+  left: 22%;
+}
+.dropdownList::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.dropdownList::-webkit-scrollbar-thumb {
+  background: #8daab9cc;
+  border-radius: 10px;
+}
+
+.dropdownList::-webkit-scrollbar-track {
+  background: #d6eaf4;
 }
 
 .dropdownList.show {
@@ -203,15 +237,18 @@ input[type="checkbox"] {
 
 .dropdownItem {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 8px;
   font-size: 15px;
   color: black;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  gap: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 40px;
 }
-
 .dropdownItem:hover {
   background-color: #f0f8ff;
 }
@@ -219,18 +256,20 @@ input[type="checkbox"] {
 .dropdownItem_user_details {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .user_detail_initial {
   background-color: #ffebeb;
+
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 15px;
+  width: 32px;
+  height: 32px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .dropdownItem button {
@@ -350,8 +389,8 @@ input[type="checkbox"] {
 }
 
 #canclebtn:hover {
-  background-color: rgba(207, 54, 54, 0.1);
-  color: #cf3636;
+  background: #cf3636;
+  color: white;
   transform: scale(1.05);
 }
 

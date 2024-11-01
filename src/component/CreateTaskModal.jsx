@@ -32,26 +32,29 @@ function CreateTaskModal() {
 
   // Fetch task data for editing and pre-fill form
   useEffect(() => {
-    if (selectedTaskId) {
-      const fetchTask = async () => {
-        try {
+    const fetchUsersAndTask = async () => {
+      try {
+        if (selectedTaskId) {
           const taskRes = await getTaskById(selectedTaskId); // Fetch task by ID
           if (taskRes.status === 200) {
             fillTaskData(taskRes.data); // Pre-fill task data
           }
-          // Fetch all users email to assign tasks
-
-          const userRes = await getAllUsers();
-          if (userRes && userRes.data) {
-            setTaskData((pre) => ({ ...pre, users: userRes.data }));
-          }
-        } catch (error) {
-          console.error("Failed to fetch task data:", error);
         }
-      };
-      fetchTask();
-    }
+        
+        // Fetch all users email to assign tasks (for both create and edit modes)
+        const userRes = await getAllUsers();
+        if (userRes && userRes.data) {
+          setTaskData((prev) => ({ ...prev, users: userRes.data }));
+        }
+        
+      } catch (error) {
+        console.error("Failed to fetch task data:", error);
+      }
+    };
+    
+    fetchUsersAndTask();
   }, [selectedTaskId]);
+  
 
   // Fill task data for editing
   const fillTaskData = (data) => {
@@ -133,13 +136,10 @@ function CreateTaskModal() {
     if (taskData.checklist.length === 0) {
       newError.checklist = "At least one checklist item is required";
     } else {
-      let isEmptyDescription = false;
+      const  isEmptyDescription = taskData.checklist.some(item => !item.description.trim());
       for (let i = 0; i < taskData.checklist.length; i++) {
-        if (taskData.checklist[i].description.trim()) {
-          isEmptyDescription = true;
-          break;
-        }
-        if (!isEmptyDescription) {
+       
+        if (isEmptyDescription) {
           newError.checklist = "Checklist description is required ";
         }
       }
@@ -252,20 +252,20 @@ function CreateTaskModal() {
                 Select Priority <p>*</p>
               </span>
               <div
-                className={addClass("HIGH PRIORITY")}
+              className={`${addClass("HIGH PRIORITY")} ${styles.high}`}
                 onClick={() => handlePriorityChange("HIGH PRIORITY")}
               >
                 <img src={high_priority_icon} alt="" />
                 HIGH PRIORITY
               </div>
               <div
-                className={addClass("MODERATE PRIORITY")}
+               className={`${addClass("MODERATE PRIORITY")} ${styles.moderate}`}
                 onClick={() => handlePriorityChange("MODERATE PRIORITY")}
               >
                 <img src={mid_priority_icon} alt="" /> MODERATE PRIORITY
               </div>
               <div
-                className={addClass("LOW PRIORITY")}
+                className={`${addClass("LOW PRIORITY")} ${styles.low}`}
                 onClick={() => handlePriorityChange("LOW PRIORITY")}
               >
                 <img src={low_priority_icon} alt="" /> LOW PRIORITY
@@ -296,7 +296,7 @@ function CreateTaskModal() {
                   )}
                 </div>
                 {isOpen && (
-                  <ul className={`styles.dropdownList ${isOpen ? "show" : ""}`}>
+                  <ul className={`${styles.dropdownList} ${isOpen ? styles.show : ""}`}>
                     {taskData.users.map((user) => (
                       <li key={user._id} className={styles.dropdownItem}>
                         <div className={styles.dropdownItem_user_details}>

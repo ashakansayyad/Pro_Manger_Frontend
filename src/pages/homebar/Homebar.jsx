@@ -51,11 +51,14 @@ function Homebar() {
         <div className={styles.homebar_header_title}>
           <h2>
             Welcome!
-            {isLoading ? (
+            <span className={styles.userName}>
+
+             {isLoading ? (
               <p>Loading..</p>
             ) : isLoggedIn ? (
-              loggedUserData?.name
+              loggedUserData?.name.charAt(0).toUpperCase() + loggedUserData?.name.slice(1)
             ) : null}
+            </span>
           </h2>
           <p id={styles.currentdate}>{CurrentDate()}</p>
         </div>

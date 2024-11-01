@@ -13,6 +13,13 @@
   font-family: "Poppins", serif;
   /* border: 1px solid black; */
 }
+.userName{
+  margin-left: 8px; 
+}
+.userName p{
+  font-size: 12px;
+  font-weight: 600;
+}
 .homebar_header_title {
   display: flex;
   font-family: "Poppins", serif;
