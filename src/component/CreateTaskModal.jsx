@@ -7,6 +7,7 @@ import high_priority_icon from "../assets/high_priority.svg";
 import mid_priority_icon from "../assets/mid_priority.svg";
 import low_priority_icon from "../assets/low_priority.svg";
 import DatePicker from "react-datepicker";
+import arrow_icon from "../assets/collpas_down_arrow.svg";
 import { toast } from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
 import "./CSS/custom-datepicker.css";
@@ -292,7 +293,7 @@ function CreateTaskModal() {
                       }
                     </div>
                   ) : (
-                    <div>Add an assignee</div>
+                    <div className={styles.modalContent_custom_dropdown_addAssignee}>Add an assignee <img src={arrow_icon} /></div>
                   )}
                 </div>
                 {isOpen && (

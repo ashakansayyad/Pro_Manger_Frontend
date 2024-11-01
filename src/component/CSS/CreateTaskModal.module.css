@@ -197,7 +197,11 @@ input[type="checkbox"] {
   align-items: center;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+.modalContent_custom_dropdown_addAssignee{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .modalContent_checklist_singlelist,
 .modalContent_custom_dropdown:hover {
   border-color: #007bff;
@@ -402,20 +406,22 @@ input[type="checkbox"] {
   height: 40px;
   border: none;
   cursor: pointer;
-  background: #17a2b8;
+  background: #138496;
   color: #ffffff;
   border-radius: 12px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #savebtn:hover {
-  background: #138496;
-  color: #ffffff;
+background: transparent;
+border: 2px solid #0c5e6a;  
+font-weight: 600;
+  color: #0b5661;
   transform: scale(1.05);
 }
 
 .datepicker:hover {
-  border-color: #4391ed;
+  border: 2px solid #4391ed ;
   background-color: rgba(65, 140, 239, 0.1);
 }
 .error {
