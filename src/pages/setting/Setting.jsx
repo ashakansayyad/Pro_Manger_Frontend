@@ -125,7 +125,7 @@ function Setting() {
         // Redirect to login page if email or password is changed
         if (email || newPassword) {
           setLoggedUserData(null);
-          localStorage.removeItem("userToken");
+          localStorage.removeItem("token");
           toast.info("Please log in again due to email/password change.", {
             theme: "colored",
           });
